@@ -25,6 +25,6 @@ RUN {   (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == sy
 }
 
 HEALTHCHECK CMD systemctl -q is-active systemd-journald.service || exit 1
-VOLUME  [ “/sys/fs/cgroup” ]
+VOLUME  [ "/sys/fs/cgroup" ]
 STOPSIGNAL SIGRTMIN+3
 CMD [ "/sbin/init" ]
